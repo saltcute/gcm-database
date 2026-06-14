@@ -1,7 +1,11 @@
 import type { DataOrError } from "@base/dataOrError";
+import type { BaseChart } from "./chart";
 
-export interface Database<Chart> {
-    getChart(identifier: string): Promise<DataOrError<Chart>>;
+export interface Database<Chart extends BaseChart> {
+    getChart(
+        identifier: string,
+        difficulty: Chart["difficulty"],
+    ): Promise<DataOrError<Chart>>;
     getJacket(
         identifier: string,
         variant?: unknown,
