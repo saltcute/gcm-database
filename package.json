@@ -1,0 +1,43 @@
+{
+    "name": "gcm-database",
+    "version": "0.0.0",
+    "description": "A GekiChuMai Metadata database protocol",
+    "homepage": "https://github.com/saltcute/gcm-database#readme",
+    "bugs": {
+        "url": "https://github.com/saltcute/gcm-database/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/saltcute/gcm-database.git"
+    },
+    "license": "MIT",
+    "author": "saltcute",
+    "type": "commonjs",
+    "exports": {
+        "./maimai": "./dist/maimai.js",
+        "./chunithm": "./dist/chunithm.js",
+        "./ongeki": "./dist/ongeki.js"
+    },
+    "files": [
+        "dist/"
+    ],
+    "scripts": {
+        "build": "tsc && tsc-alias",
+        "clean": "rimraf dist/*",
+        "format": "biome format --write",
+        "lint": "biome lint --write",
+        "make": "npm run clean && npm run format && npm run lint && npm run build",
+        "test": "export LOG_LEVEL=debug && npm run make && node ./test/test.js",
+        "preversion": "npm install",
+        "version": "npm version -m \"chore: bump version to %s\"",
+        "postversion": "current_version=$(npm pkg get version) && current_version=${current_version:1} && current_version=${current_version::-1} && git tag v$current_version"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^2.5.0",
+        "@types/node": "^25.9.3",
+        "rimraf": "^6.1.3",
+        "semver": "^7.8.4",
+        "tsc-alias": "^1.8.17",
+        "typescript": "^6.0.3"
+    }
+}
