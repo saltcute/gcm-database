@@ -27,10 +27,7 @@
         "format": "biome format --write",
         "lint": "biome lint --write",
         "make": "npm run clean && npm run format && npm run lint && npm run build",
-        "test": "export LOG_LEVEL=debug && npm run make && node ./test/test.js",
-        "preversion": "npm install",
-        "version": "npm version -m \"chore: bump version to %s\"",
-        "postversion": "current_version=$(npm pkg get version) && current_version=${current_version:1} && current_version=${current_version::-1} && git tag v$current_version"
+        "test": "export LOG_LEVEL=debug && npm run make && node ./test/test.js"
     },
     "devDependencies": {
         "@biomejs/biome": "^2.5.0",
