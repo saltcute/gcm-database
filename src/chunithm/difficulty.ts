@@ -3,6 +3,6 @@ export enum Difficulty {
     ADVANCED = "advanced",
     EXPERT = "expert",
     MASTER = "master",
-    RE_MASTER = "remaster",
+    ULTIMA = "ultima",
     WORLDS_END = "worlds_end",
 }
