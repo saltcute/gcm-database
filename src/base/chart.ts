@@ -19,5 +19,9 @@ export interface BaseChart {
      * Displayed level of this chart.
      */
     level: string;
+    /**
+     * A decimal number of the internal level of this chart.
+     */
+    internalLevel?: number;
     optionalData: unknown;
 }
