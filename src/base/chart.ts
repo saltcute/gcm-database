@@ -23,5 +23,8 @@ export interface BaseChart {
      * A decimal number of the internal level of this chart.
      */
     internalLevel?: number;
+    notes: Record<string, number>;
+    bpm: number[];
+    designer: string;
     optionalData: unknown;
 }

@@ -12,4 +12,11 @@ export interface Chart extends BaseChart {
      */
     type: Type;
     difficulty: Difficulty;
+    notes: {
+        tap: number;
+        hold: number;
+        slide: number;
+        touch: number;
+        break: number;
+    };
 }

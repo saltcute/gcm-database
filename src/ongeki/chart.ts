@@ -9,6 +9,13 @@ export enum LunaticType {
 
 export interface Chart extends BaseChart {
     difficulty: Difficulty;
+    notes: {
+        tap: number;
+        hold: number;
+        side: number;
+        flick: number;
+        bell: number;
+    };
     lunatic: LunaticType;
     boss: {
         character: {
